@@ -16,8 +16,6 @@ public class EmployeeController {
 
     private EmployeeService employeeService;
 
-    // Add Employee API
-
     @PostMapping
     public ResponseEntity<EmployeeDto> createEmployee(@RequestBody EmployeeDto employeeDto){
         EmployeeDto savedEmployee = employeeService.createEmployee(employeeDto);
@@ -47,6 +45,4 @@ public class EmployeeController {
         employeeService.deleteEmployee(empId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
 }
